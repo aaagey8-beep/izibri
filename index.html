@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore — Магазин техники</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">⚡ Tech<span>Store</span></div>
+        <nav>
+            <a href="#catalog">Каталог</a>
+            <a href="#catalog">Акции</a>
+            <a href="#catalog">Доставка</a>
+            <button class="cart-btn" onclick="openCart()">
+                🛒 Корзина <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Техника для жизни и <span>работы</span></h1>
+    <p>Официальная гарантия • Бесплатная доставка от 30 000 ₽ • Рассрочка 0%</p>
+    <a href="#catalog" class="hero-btn">Смотреть каталог</a>
+</section>
+
+<div class="filters" id="filters">
+    <button class="filter-btn active" data-cat="all">Все категории</button>
+    <button class="filter-btn" data-cat="Смартфоны">Смартфоны</button>
+    <button class="filter-btn" data-cat="Ноутбуки">Ноутбуки</button>
+    <button class="filter-btn" data-cat="Планшеты">Планшеты</button>
+    <button class="filter-btn" data-cat="Аксессуары">Аксессуары</button>
+</div>
+
+<main class="products" id="catalog"></main>
+
+<div class="modal-overlay" id="cartModal" onclick="if(event.target===this) closeCart()">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>🛒 Ваша корзина</h2>
+            <button class="close-btn" onclick="closeCart()">&times;</button>
+        </div>
+        <div class="modal-body" id="cartItems"></div>
+        <div class="modal-footer">
+            <div class="total-row">
+                <span>Итого:</span>
+                <span id="cartTotal">0 ₽</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+    <p>© 2025 TechStore. Все права защищены. | <a href="#">Политика конфиденциальности</a></p>
+    <p style="margin-top:8px;">📞 8-800-555-35-35 • ✉️ info@techstore.ru</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
